@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>เซียมซีวรรณคดีไทย — ฟอร์ม</title>
+
+<style>
+  html,body{height:100%;margin:0}
+  body{
+    display:flex; justify-content:center; align-items:center;
+    background: radial-gradient(circle at 50% -20%, #5b1a1a, #2a0c0c 80%);
+    font-family:"TH Sarabun New","Sarabun",system-ui,sans-serif;
+  }
+
+  .hero-wrapper{
+    position:relative;
+    width:67vw;
+    max-width:800px;
+  }
+
+  .hero-img{
+    width:100%; height:auto; display:block;
+    border-radius:24px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+    border:3px solid rgba(255,255,255,0.4);
+  }
+
+  .btn{
+    position:absolute;
+    bottom:8%;
+    left:50%;
+    transform:translateX(-50%);
+    appearance:none; border:0; cursor:pointer;
+    font-weight:900; font-size:clamp(16px,3.8vw,20px);
+    padding:12px 26px; border-radius:14px;
+    background:linear-gradient(180deg,#ffe073,#f6b51a);
+    color:#5c0000;
+    box-shadow:0 3px 0 #915f00 inset,
+               0 -2px 0 #fff3b4 inset,
+               0 6px 20px rgba(0,0,0,.35);
+    transition:transform .08s, filter .2s;
+    z-index:3;
+  }
+  .btn:hover{ filter:brightness(1.05) }
+  .btn:active{ transform:translate(-50%,1px) }
+</style>
+</head>
+
+<body>
+  <div class="hero-wrapper">
+    <!-- พื้นหลัง -->
+    <img src="images/form.png" alt="ฟอร์ม" class="hero-img" />
+
+    <!-- ปุ่มไปกรอกแบบฟอร์ม -->
+    <button id="nextBtn" class="btn">✍ ไปกรอกแบบฟอร์ม</button>
+  </div>
+
+<script>
+  // ลิงก์ Google Form
+  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfGu0vOplbXiUz79gyWpAb3nXXVwrniTFqslM3LxhpZNQMh9Q/viewform";
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    // ไปยัง Google Form
+    window.open(FORM_URL, "_blank"); // เปิดในแท็บใหม่
+    // หรือใช้ window.location.href = FORM_URL; ถ้าอยากให้แทนที่หน้าเดิม
+  });
+</script>
+</body>
+</html>
